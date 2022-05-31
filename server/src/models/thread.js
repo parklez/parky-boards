@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 
 const threadSchema = new mongoose.Schema(
   {
-    title: {type: String, require: true},
-    content: {type: String, require: true},
+    userId: {type: String, required: true},
+    title: {type: String, required: true},
+    content: {type: String, required: true},
     published: {type: Date, default: Date.now},
     comments: {type: Array},
   },

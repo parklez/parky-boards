@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const mongoSettings = require('../config/database');
 const threadSchema = require('../models/thread');
 const commentSchema = require('../models/comment');
+const userSchema = require('../models/user');
 
 mongoose.pluralize(null);
 
@@ -25,4 +26,9 @@ const commentModel = mongoConnection.model(
   commentSchema,
 );
 
-module.exports = {threadModel, commentModel};
+const userModel = mongoConnection.model(
+  'users',
+  userSchema,
+);
+
+module.exports = {threadModel, commentModel, userModel};

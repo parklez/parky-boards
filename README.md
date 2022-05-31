@@ -12,7 +12,7 @@ Simple thread/image board project focused on simplicity and functionality.
 Work in progress
 
 ## Server endpoints
-#### Start thread
+#### Start thread [Auth]
 `POST /thread`
 ```json
 {
@@ -27,7 +27,7 @@ Work in progress
 #### Find a thread
 `GET /thread/<thread_id>`
 
-#### Send comment
+#### Send comment [Auth]
 `POST /comment`
 ```json
 {
@@ -45,3 +45,21 @@ Work in progress
     ...
 ]
 ```
+
+#### Register
+`POST /register`
+```json
+{
+	"user": "someone",
+	"pass": "123"
+}
+````
+
+#### Login
+`POST /login`
+```json
+{
+	"user": "someone",
+	"pass": "123"
+}
+````

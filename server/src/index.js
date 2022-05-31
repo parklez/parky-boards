@@ -3,7 +3,7 @@ const express = require('express');
 // const path = require('path');
 const app = express();
 
-const port = require('./config/app');
+const {port} = require('./config/app');
 
 // Middleware
 app.use(express.json());

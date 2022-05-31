@@ -2,7 +2,12 @@ const {threadModel} = require('../../lib/mongo');
 
 module.exports = async (req, res) => {
   try {
-    const newThread = threadModel(req.body);
+    const userId = req.user.payload.userId;
+
+    const newThread = threadModel({userId: userId,
+      title: req.body.title,
+      content: req.body.content},
+    );
     const result = await newThread.save();
     return res.status(201).json(result);
   } catch (error) {

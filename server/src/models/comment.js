@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema(
   {
-    content: {type: String, require: true},
+    userId: {type: String, required: true},
+    content: {type: String, required: true},
     published: {type: Date, default: Date.now},
-    thread: {type: mongoose.ObjectId, require: true},
+    thread: {type: mongoose.ObjectId, required: true},
   },
   {versionKey: false},
 );
