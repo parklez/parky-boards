@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Routes
 const routes = require('./routes');
-app.use(routes);
+app.use('/api', routes);
 
 // // Server static files
 // app.use(express.static(`${__dirname}/../public`));

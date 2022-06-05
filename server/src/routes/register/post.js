@@ -4,25 +4,25 @@ const {hashPassword, signJwt} = require('../../utils');
 const register = async (req, res) => {
   try {
     // eslint-disable-next-line prefer-const
-    let {user, pass} = req.body;
-    user = user.toLowerCase();
+    let {username, password} = req.body;
+    username = username.toLowerCase();
 
-    if (!user || !pass) {
+    if (!username || !password) {
       return res.status(400).json({
         error: 'Username/Password must not be empty!',
       });
     }
 
-    if (await userModel.findOne({user})) {
+    if (await userModel.findOne({username})) {
       return res.status(409).json({
         error: 'User already exists!',
       });
     }
 
-    const encryptedPass = hashPassword(pass);
+    const encryptedPass = hashPassword(password);
 
     const newUser = await userModel.create({
-      username: user,
+      username: username,
       password: encryptedPass,
     });
 

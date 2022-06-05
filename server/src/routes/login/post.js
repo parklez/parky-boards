@@ -5,11 +5,11 @@ const {verifyPassword, signJwt} = require('../../utils');
 const login = async (req, res) => {
   try {
     // eslint-disable-next-line prefer-const
-    let {user, pass} = req.body;
-    user = user.toLowerCase();
+    let {username, password} = req.body;
+    username = username.toLowerCase();
 
     const newLogin = await userModel.findOne({
-      user,
+      username,
     });
 
     if (!newLogin) {
@@ -18,17 +18,18 @@ const login = async (req, res) => {
       });
     }
 
-    const result = verifyPassword(pass, newLogin.password);
+    const result = verifyPassword(password, newLogin.password);
     if (!result) {
       return res.status(400).json({
         error: 'Invalid credentials.',
       });
     }
-    return res.status(200).send(
-      await signJwt(newLogin._id),
+    return res.status(200).json(
+      {token: await signJwt(newLogin._id),
+        expiresIn: 3600},
     );
   } catch (error) {
-    return res.send(500).json({
+    return res.status(500).json({
       error,
     });
   }

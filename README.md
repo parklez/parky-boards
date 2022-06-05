@@ -3,8 +3,8 @@ Simple thread/image board project focused on simplicity and functionality.
 
 - Mongo
 - Express
-- Angular
-- Node
+- Angular 13
+- Node 16
 
 ![layout](layout.jpeg)
 
@@ -50,8 +50,8 @@ Work in progress
 `POST /register`
 ```json
 {
-	"user": "someone",
-	"pass": "123"
+	"username": "someone",
+	"password": "12345"
 }
 ````
 
@@ -59,7 +59,7 @@ Work in progress
 `POST /login`
 ```json
 {
-	"user": "someone",
-	"pass": "123"
+	"username": "someone",
+	"password": "12345"
 }
 ````
