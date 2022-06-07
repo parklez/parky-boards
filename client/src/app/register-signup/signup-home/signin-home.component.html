@@ -1,0 +1,29 @@
+<form [formGroup]="signinForm" (ngSubmit)="onSubmit()" id="main">
+    <h4 class="title is-4">
+        Sign Up - Register account
+    </h4>
+    <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="text" placeholder="Username" formControlName="username">
+            <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+            </span>
+        </p>
+    </div>
+    <div class="field">
+        <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" formControlName="password">
+            <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+            </span>
+        </p>
+    </div>
+    <div class="field">
+        <p class="control">
+            <button class="button is-info" type="submit" [disabled]="!signinForm.valid">
+                Login
+            </button>
+        </p>
+    </div>
+    <hr>
+</form>

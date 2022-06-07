@@ -29,7 +29,10 @@ const register = async (req, res) => {
     const jwt = await signJwt(newUser._id);
 
     newUser.token = jwt;
-    return res.status(201).json(newUser);
+    return res.status(201).json({
+      token: jwt,
+      expiresIn: 3600,
+    });
   } catch (error) {
     return res.status(500).json({
       error: error,

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { AuthData } from '../models/auth-data';
 import { LoginData } from '../models/login-data';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { LoginData } from '../models/login-data';
 export class AuthenticationService {
 
   userJWT: string = '';
-  isAuthenticated = false;
+  authenticated = false;
+  private authListener = new Subject<boolean>();
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +23,31 @@ export class AuthenticationService {
         if (response) {
           // Save JWT & Set authentication to true
           this.userJWT = response.token;
-          this.isAuthenticated = true;
+          this.authenticated = true;
+          const now = new Date();
+          // Save to local storage
+          this.saveLocalAuthData(
+            response.token,
+            new Date(now.getTime() + response.expiresIn * 1000)
+          )
+          this.authListener.next(true);
+        }
+      },
+      error: (e) => {
+        // TODO: Send errors back to component and return
+        console.log(e)
+      },
+    })
+  }
+
+  signUpUser(username: string, password: string) {
+    const bodyData: AuthData = {username, password};
+    this.http.post<LoginData>('/api/register', bodyData).subscribe({
+      next: (response) => {
+        if (response) {
+          // Save JWT & Set authentication to true
+          this.userJWT = response.token;
+          this.authenticated = true;
           const now = new Date();
           // Save to local storage
           this.saveLocalAuthData(
@@ -57,5 +83,13 @@ export class AuthenticationService {
       token: token,
       expiresAt: expirationDate
     }
+  }
+
+  isAuthenticated(): boolean {
+    return this.authenticated;
+  }
+
+  getAuthListener() {
+    return this.authListener.asObservable();
   }
 }

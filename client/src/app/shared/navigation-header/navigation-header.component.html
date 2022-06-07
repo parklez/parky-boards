@@ -1,1 +1,19 @@
-<p>navigation-header works!</p>
+<div>
+    <span class="spacer"></span>
+    [
+    <span *ngIf="isAuthenticated">
+        <a routerLink="logout">
+            Log out
+        </a>
+    </span>
+    <span *ngIf="!isAuthenticated">
+        <a routerLink="login">
+            Log in
+        </a>
+        /
+        <a routerLink="signup">
+            Sign Up
+        </a>
+    </span>
+    ]
+</div>
