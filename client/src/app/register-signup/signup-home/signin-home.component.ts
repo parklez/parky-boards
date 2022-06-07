@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
@@ -10,9 +10,9 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 })
 export class SigninHomeComponent implements OnInit {
 
-  signinForm = new FormGroup({
-    "username": new FormControl(null, Validators.required),
-    "password": new FormControl(null, Validators.required)
+  signinForm = new UntypedFormGroup({
+    "username": new UntypedFormControl(null, Validators.required),
+    "password": new UntypedFormControl(null, Validators.required)
   });
 
   constructor(public auth: AuthenticationService) { }

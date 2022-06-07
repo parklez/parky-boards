@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
@@ -10,9 +10,9 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 })
 export class LoginHomeComponent implements OnInit {
 
-  loginForm = new FormGroup({
-    "username": new FormControl('', Validators.required),
-    "password": new FormControl('', Validators.compose([
+  loginForm = new UntypedFormGroup({
+    "username": new UntypedFormControl(null, Validators.required),
+    "password": new UntypedFormControl(null, Validators.compose([
       Validators.minLength(5),
       Validators.required
       // Must contain letters (both uppercase and lowercase) and numbers
