@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoSettings = require('../config/database');
 
 const threadSchema = new mongoose.Schema(
   {
@@ -11,4 +12,9 @@ const threadSchema = new mongoose.Schema(
   {versionKey: false},
 );
 
-module.exports = threadSchema;
+const threadModel = mongoose.model(
+  mongoSettings.postCollection,
+  threadSchema,
+);
+
+module.exports = threadModel;

@@ -1,4 +1,4 @@
-const {commentModel} = require('../../lib/mongo');
+const commentModel = require('../../models/comment');
 
 module.exports = async (req, res) => {
   try {

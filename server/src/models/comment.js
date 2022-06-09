@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoSettings = require('../config/database');
 
 const commentSchema = new mongoose.Schema(
   {
@@ -10,4 +11,9 @@ const commentSchema = new mongoose.Schema(
   {versionKey: false},
 );
 
-module.exports = commentSchema;
+const commentModel = mongoose.model(
+  mongoSettings.commentCollection,
+  commentSchema,
+);
+
+module.exports = commentModel;

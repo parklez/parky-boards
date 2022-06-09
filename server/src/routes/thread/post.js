@@ -1,8 +1,8 @@
-const {threadModel} = require('../../lib/mongo');
+const threadModel = require('../../models/thread');
 
 module.exports = async (req, res) => {
   try {
-    const userId = req.user.payload.userId;
+    const userId = req.user.userId;
 
     const newThread = threadModel({userId: userId,
       title: req.body.title,

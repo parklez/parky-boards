@@ -6,6 +6,7 @@ const mongodbSettings = {
   database: 'chan',
   postCollection: 'posts',
   commentCollection: 'comments',
+  usersCollection: 'users',
 };
 
 module.exports = mongodbSettings;

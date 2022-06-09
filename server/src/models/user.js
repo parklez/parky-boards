@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoSettings = require('../config/database');
 
 const userSchema = new mongoose.Schema(
   {
@@ -10,4 +11,9 @@ const userSchema = new mongoose.Schema(
   {versionKey: false},
 );
 
-module.exports = userSchema;
+const userModel = mongoose.model(
+  mongoSettings.usersCollection,
+  userSchema,
+);
+
+module.exports = userModel;

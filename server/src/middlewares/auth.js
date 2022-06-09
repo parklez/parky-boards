@@ -10,7 +10,7 @@ const authorize = async (req, res, next) => {
 
   try {
     const decoded = await verifyJwt(token);
-    req.user = decoded;
+    req.user = decoded.payload;
   } catch (err) {
     return res.status(401).send('Invalid Token');
   }
