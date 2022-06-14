@@ -1,22 +1,17 @@
 #page {
-    max-width: 60rem;
-    margin: auto;
-}
-
-#navigation-header {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 1rem;
+  max-width: 60rem;
+  margin: auto;
 }
 
 #main-content {
-    margin-top: 1rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    min-height: 40rem;
-    padding: 1rem;
+  color: white;
+  background-color: #d0c3aa;
+  margin-top: 0.5rem;
+  min-height: 40rem;
+  padding: 1rem;
+  border: 3px solid rgba(52, 52, 52, 0.8);
 }
 
 #footer {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.5rem;
 }

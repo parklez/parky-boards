@@ -1,0 +1,17 @@
+.footer-style {
+    background-color: rgba(52, 52, 52, 0.8);
+    color: white;
+    padding: 1rem;
+    border: 3px solid rgba(52, 52, 52, 0.8);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+a {
+    padding-right: 2rem;
+    color: white;
+}
+
+a:hover {
+    color: rgb(253, 255, 219);
+}
