@@ -1,0 +1,22 @@
+#board-title {
+    background-color: rgba(52, 52, 52, 0.8);
+    padding: 0.5rem;
+    border-top: 3px solid rgba(52, 52, 52, 0.8);
+    border-right: 3px solid rgba(52, 52, 52, 0.8);
+    border-left: 3px solid rgba(52, 52, 52, 0.8);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-width: 20%;
+    text-align: center;
+}
+
+#board-title h1 {
+    color: rgb(255, 241, 181);
+}
+
+#preview {
+    padding: 1rem;
+    border: 3px solid rgba(52, 52, 52, 0.8);
+    background-color: rgba(52, 52, 52, 0.8);
+    min-height: 10rem;
+}
