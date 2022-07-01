@@ -12,7 +12,10 @@ export class SigninHomeComponent implements OnInit {
 
   signinForm = new UntypedFormGroup({
     "username": new UntypedFormControl(null, Validators.required),
-    "password": new UntypedFormControl(null, Validators.required)
+    "password": new UntypedFormControl(null, Validators.compose([
+      Validators.minLength(5),
+      Validators.required
+    ])),
   });
 
   constructor(public auth: AuthenticationService) { }

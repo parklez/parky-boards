@@ -1,4 +1,30 @@
 #main {
-    max-width: 20rem;
+    max-width: 30rem;
     margin: auto;
+    background-color: rgba(52, 52, 52, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 3px solid rgba(52, 52, 52, 0.8);
+}
+
+h4 {
+    color: rgb(255, 241, 181);
+}
+
+#button-right-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+button {
+    float:right;
+}
+
+hr {
+    background-color: rgba(52, 52, 52, 0.8);
+}
+
+#terms {
+    color: rgba(52, 52, 52, 0.8);
 }

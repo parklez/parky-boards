@@ -2,6 +2,7 @@
     <h4 class="title is-4">
         Log in - Sign in 
     </h4>
+    <hr>
     <div class="field">
         <p class="control has-icons-left">
             <input class="input" type="text" placeholder="Username" formControlName="username">
@@ -18,12 +19,12 @@
             </span>
         </p>
     </div>
-    <div class="field">
+    <br>
+    <div class="field" id="button-right-container">
         <p class="control">
-            <button class="button is-info" type="submit" [disabled]="!loginForm.valid">
+            <button class="button" type="submit" [disabled]="!loginForm.valid">
                 Login
             </button>
         </p>
     </div>
-    <hr>
 </form>

@@ -2,6 +2,7 @@
     <h4 class="title is-4">
         Sign Up - Register account
     </h4>
+    <hr>
     <div class="field">
         <p class="control has-icons-left">
             <input class="input" type="text" placeholder="Username" formControlName="username">
@@ -18,12 +19,16 @@
             </span>
         </p>
     </div>
-    <div class="field">
+    <br>
+    <div class="field" id="button-right-container">
         <p class="control">
-            <button class="button is-info" type="submit" [disabled]="!signinForm.valid">
+            <button class="button" type="submit" [disabled]="!signinForm.valid">
                 Login
             </button>
         </p>
     </div>
-    <hr>
 </form>
+<hr>
+<div id="terms">
+    By registering you accept to sell your soul for a donut okly dokly
+</div>
