@@ -53,7 +53,7 @@ Work in progress
 	"username": "someone",
 	"password": "12345"
 }
-````
+```
 
 #### Login
 `POST /login`
@@ -62,4 +62,4 @@ Work in progress
 	"username": "someone",
 	"password": "12345"
 }
-````
+```
