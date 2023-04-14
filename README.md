@@ -6,7 +6,7 @@ Simple thread/image board project focused on simplicity and functionality.
 - Angular 13
 - Node 16
 
-![layout](layout.jpeg)
+![layout](sketches/layout.jpeg)
 
 ## Setting up
 Work in progress
