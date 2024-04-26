@@ -10,3 +10,7 @@ div {
 a {
   color: rgb(255, 241, 181);
 }
+
+#username {
+  float: right;
+}

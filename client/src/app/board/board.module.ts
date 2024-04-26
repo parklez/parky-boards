@@ -7,6 +7,7 @@ import { ThreadTemplateComponent } from './thread-template/thread-template.compo
 import { BoardHeaderComponent } from './board-header/board-header.component';
 import { InputFormComponent } from './input-form/input-form.component';
 import { QuickNavigationComponent } from './quick-navigation/quick-navigation.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { QuickNavigationComponent } from './quick-navigation/quick-navigation.co
   imports: [
     CommonModule,
     BoardRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class BoardModule { }

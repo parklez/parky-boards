@@ -1,1 +1,27 @@
-<p>input-form works!</p>
+<form [formGroup]="threadForm" (ngSubmit)="onSubmit()" id="main" *ngIf="isAuthenticated">
+    <h4 class="title is-4">
+        Start thread
+    </h4>
+    <div class="field">
+        <p class="has-icons-left">
+            <input class="input" type="text" placeholder="Title" formControlName="title">
+        </p>
+    </div>
+    <div class="field">
+        <p class="has-icons-left">
+            <textarea class="textarea" type="text" placeholder="Your story" formControlName="content"></textarea>
+        </p>
+    </div>
+    <div class="field" id="button-right-container">
+        <p class="control">
+            <button class="button" type="submit" [disabled]="!threadForm.valid">
+                Submit
+            </button>
+        </p>
+    </div>
+</form>
+<form id="main" *ngIf="!isAuthenticated">
+    <h4 class="title is-4">
+        ~ Log In to start a thread ~
+    </h4>
+</form>

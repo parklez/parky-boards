@@ -1,0 +1,19 @@
+#input-form {
+    margin-top: 1rem;
+}
+#quick-navigation {
+    margin-top: 1rem;
+}
+
+#board-area {
+    margin-top: 1rem;
+    min-height: 30rem;
+}
+
+#pagination {
+    margin-top: 1rem;
+}
+
+hr {
+    background-color: rgba(52, 52, 52, 0.8);
+}

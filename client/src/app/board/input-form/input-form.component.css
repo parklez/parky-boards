@@ -1,0 +1,59 @@
+h4 {
+    color: rgb(255, 241, 181);
+    text-align: center;
+}
+
+form {
+    max-width: 30rem;
+    margin: auto;
+    background-color: rgba(95, 92, 85, 0.8);
+    padding: 1rem;
+    border-radius: 15px;
+    border: 3px solid rgba(52, 52, 52, 0.8);
+}
+
+textarea, input {
+    background-color: rgba(52, 52, 52, 0.8);
+    color: rgb(255, 241, 181);
+    border: none
+}
+
+textarea:focus, input:focus {
+    outline:none;
+    box-shadow: none;
+}
+
+/*
+There's many ways to move an element to the right,
+and then in some scenarios there's side effects that
+needs "fixing". In the button below, when using float,
+it will overflow the space intended from its container,
+and one way to prevent that is to use the combination
+below.
+
+Another popular way on the internet is to use the
+"right: 0px" property with its container having extra
+padding to accomadate that.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/float
+https://developer.mozilla.org/en-US/docs/Web/CSS/clear
+
+https://www.w3schools.com/cssref/pr_class_float.asp
+https://www.w3docs.com/snippets/html/how-to-right-align-a-button-with-css.html
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+*/
+
+#button-right-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+button {
+    float:right;
+}
+
+::placeholder {
+    color: rgb(255, 241, 181);
+}

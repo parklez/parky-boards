@@ -1,25 +1,19 @@
 <div>
-    <span class="spacer"></span>
     [
     <span>
-        <a routerLink="./">
-            Home
-        </a>
+        <a routerLink="./"> Home </a>
     </span>
     /
     <span *ngIf="isAuthenticated">
-        <a routerLink="logout">
-            Log out
-        </a>
+        <a routerLink="logout"> Log out </a>
     </span>
     <span *ngIf="!isAuthenticated">
-        <a routerLink="login">
-            Log in
-        </a>
+        <a routerLink="login"> Log in </a>
         /
-        <a routerLink="signup">
-            Sign Up
-        </a>
+        <a routerLink="signup"> Sign Up </a>
     </span>
     ]
+    <span *ngIf="username" id="username">
+        <a> ~ {{ username }}</a>
+    </span>
 </div>

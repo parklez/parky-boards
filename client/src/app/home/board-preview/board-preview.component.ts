@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-board-preview',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardPreviewComponent implements OnInit {
 
-  name = 'Generic board'
+  @Input() name!: string;
+  @Input() api!: string;
 
   constructor() { }
 

@@ -9,6 +9,8 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class NavigationHeaderComponent implements OnInit, OnDestroy {
   isAuthenticated: boolean = false;
+  username!: string;
+
   private authListener: Subscription = new Subscription();
 
   constructor(private auth: AuthenticationService) {}
@@ -18,8 +20,9 @@ export class NavigationHeaderComponent implements OnInit, OnDestroy {
     // This constantly checks for any change in the state of authentication, true or false.
     this.authListener = this.auth
       .getAuthListener()
-      .subscribe((isAuthenticated) => {
-        this.isAuthenticated = isAuthenticated;
+      .subscribe((user) => {
+        this.isAuthenticated = user.isAuthenticated;
+        this.username = user.username;
       });
   }
 

@@ -1,9 +1,11 @@
 <div>
-    <div id="board-title">
-        <h1>
-            {{ name }}
-        </h1>
-    </div>
+    <a [routerLink]="['/boards', api]">
+        <div id="board-title">
+            <h1>
+                {{ name }}
+            </h1>
+        </div>
+    </a>
     <div id="preview">
         < Preview comes here once done >
     </div>

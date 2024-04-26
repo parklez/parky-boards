@@ -10,8 +10,9 @@ import { Subject } from 'rxjs';
 export class AuthenticationService {
 
   userJWT: string = '';
+  username!: string;
   authenticated = false;
-  private authListener = new Subject<boolean>();
+  private authListener = new Subject<{username: string, isAuthenticated: boolean}>();
 
   constructor(private http: HttpClient) { }
 
@@ -24,13 +25,14 @@ export class AuthenticationService {
           // Save JWT & Set authentication to true
           this.userJWT = response.token;
           this.authenticated = true;
+          this.username = username;
           const now = new Date();
           // Save to local storage
           this.saveLocalAuthData(
             response.token,
             new Date(now.getTime() + response.expiresIn * 1000)
           )
-          this.authListener.next(true);
+          this.authListener.next({username: username, isAuthenticated: true});
         }
       },
       error: (e) => {
@@ -48,12 +50,14 @@ export class AuthenticationService {
           // Save JWT & Set authentication to true
           this.userJWT = response.token;
           this.authenticated = true;
+          this.username = username;
           const now = new Date();
           // Save to local storage
           this.saveLocalAuthData(
             response.token,
             new Date(now.getTime() + response.expiresIn * 1000)
           )
+          this.authListener.next({username: username, isAuthenticated: true});
         }
       },
       error: (e) => {
@@ -87,6 +91,10 @@ export class AuthenticationService {
 
   isAuthenticated(): boolean {
     return this.authenticated;
+  }
+
+  getUsername(): string {
+    return this.username;
   }
 
   getAuthListener() {
